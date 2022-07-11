@@ -1,0 +1,50 @@
+.navbar-main
+{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    margin-top:  50px;
+}
+
+.navbar2-main
+{
+    border-bottom: 1px solid lightgrey;
+    width: 80%;
+    margin: auto;   
+    margin-top: 15px;
+}
+
+.navbar2-main-mini
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar2-main-mini > div 
+{
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.navbar2-main-mini > div:hover 
+{
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    color: #D53F8C; 
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-radius: 3px;
+}
+ 
+.lables 
+{
+    border: 1px solid black ;
+    visibility: hidden;
+}
+
+
+
+
