@@ -1,0 +1,142 @@
+
+.container
+{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    margin-top : -40px
+}
+
+.left
+{
+    /* border: 1px solid black; */
+    width: 20%;  
+}
+
+.right
+{
+    /* border: 1px solid black; */
+    width: 80%;   
+    margin-left: 10px;
+}
+
+.main
+{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+}
+
+.button
+{
+    width: 80%;
+    margin-top: 10px;
+    background-color: #D53F8C;
+    font-weight: bold;
+    color: white;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.button:hover
+{
+    width: 80%;
+    margin-top: 10px;
+    background-color: #f40d66;
+    font-weight: bold;
+    color: white;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+
+.cart_container
+{
+    /* border: 1px solid black; */
+    margin-top: -100px;
+}
+
+.cart_heading
+{
+    padding-left: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(27, 175, 224);
+}
+
+.cart_data
+{
+    display: flex;
+    margin: auto;
+    width: 80%;
+}
+
+.cart_left
+{
+    width: 70%;
+    /* border: 1px solid black; */
+}
+
+.cart_left > div{
+    border-bottom: 1px solid grey;
+    height: 170px;
+    display: flex;
+    margin-bottom: 10px
+}
+
+.cart_right
+{
+    width: 30%; 
+}
+
+.cart_remove
+{
+    border-bottom: 1px solid black;
+    width: 60px;
+    cursor: pointer;
+}
+
+.cart_remove:hover
+{
+    /* border-bottom: 1px solid black; */
+    cursor: pointer;
+    color: #D53F8C;
+    width: 60px;
+   
+}
+
+.cart_right
+{
+    margin-left: 30px;
+}
+
+.cart_cost_details
+{
+    display: flex;
+    border-bottom: 1px solid black;
+    margin: auto;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.cart_p p {
+    margin-bottom: 5px;
+}
+
+.cost_button
+{
+    /* border: 1px solid black; */
+    margin-top: 35px;
+    text-align: center;
+    background: #D53F8C;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cost_button:hover
+{
+    background-color: #f40d66;
+}
