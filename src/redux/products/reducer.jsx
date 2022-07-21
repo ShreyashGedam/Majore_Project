@@ -30,7 +30,7 @@ export const productsReducer = (state = initStateProducts , action) => {
             return {
                 ...state,
                 error : true,
-                loading : fasle                    
+                loading : false                    
             }
 
 

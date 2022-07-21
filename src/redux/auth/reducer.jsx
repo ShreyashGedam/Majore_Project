@@ -4,7 +4,8 @@ const initState = {
     loading : false,
     token : '',
     error : false,
-    isAuth : false
+    isAuth : false,
+    data : {}
 }
  
 export const authRuducer = (state = initState , action) => {
@@ -35,6 +36,31 @@ export const authRuducer = (state = initState , action) => {
                 loading : false,
                 error : true,
                 isAuth : false,
+            }
+        }
+
+        case authActions.REGISTER_REQUEST : {
+            return {
+                ...state,
+                loading : true,
+                error : false
+            }
+        }
+
+        case authActions.REGISTER_SUCCESS : {
+            return {
+                ...state,
+                loading : false,
+                error : false,
+                data : action.payload
+            }
+        }
+
+        case authActions.REGISTER_FAILURE : {
+            return {
+                ...state , 
+                loading : false,
+                error : true
             }
         }
 
