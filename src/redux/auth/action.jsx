@@ -34,7 +34,7 @@ export const getAuth = (payload) => (dispatch) => {
         })
         .then( (res) => {
             console.log(res)
-            // dispatch(getAuthSucess(res.data.token))
+            dispatch(getAuthSucess(res.data._id))
         })
         .catch ( e => dispatch(getAuthFailuer()))
 }

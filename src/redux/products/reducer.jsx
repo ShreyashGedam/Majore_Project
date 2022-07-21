@@ -18,7 +18,7 @@ export const productsReducer = (state = initStateProducts , action) => {
                 error : false,
                 loading : true
             }
-         
+          
         case actionTypesProduct.FETCH_PRODUCT_DATA_SUCCESS :
             return {
                 ...state,
@@ -32,7 +32,6 @@ export const productsReducer = (state = initStateProducts , action) => {
                 error : true,
                 loading : false                    
             }
-
 
             // ...................................................................?
          

@@ -23,7 +23,7 @@ export const productDataRequest = () => {
         type : actionTypesProduct.FETCH_PRODUCT_DATA_REQUEST,
         
     }
-}
+} 
 
 export const productDataSucess = (payload) => {
     return {
@@ -45,7 +45,7 @@ export const productData = (payload) => (dispatch) => {
     dispatch(dataRequest)
 
     axios( {
-        url : "http://localhost:8000/products",
+        url : "http://localhost:8080/products",
         method : "GET",
         params : { 
             ...payload

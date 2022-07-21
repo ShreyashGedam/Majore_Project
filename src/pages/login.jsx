@@ -1,4 +1,4 @@
-import {  useState } from "react"
+import {  useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import { getAuth } from "../redux/auth/action"
 import { useSelector } from "react-redux"
@@ -23,37 +23,35 @@ import {
 export const Login = () => {
 
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const [email , setEmail] = useState("")
 
     const [pass , setPass] = useState("")
 
-    // const auth = useSelector( store => store.authData.isAuth)
+    const auth = useSelector( store => store.authData.isAuth)
+    const error  = useSelector( store => store.authData.error)
+    const id = useSelector( store =>  store.authData.id)
+    const load = useSelector( store => store.authData.loading)
+    // console.log(error)
+    // console.log(id)
 
-    const navigate = useNavigate()
+    useEffect(()=>{
+
+      if(auth)
+      {
+        navigate("/")
+      }
+
+    } ,[auth])
 
     const handleSubmit = () => {
-
         const data = {
             email : email,
             password : pass
         }
-
         dispatch(getAuth(data))  
-
-        // const auth = useSelector( store => store.auth.authData)
-        // console.log(auth)
-
-        // if(auth)
-        // {
-        //     alert("Login Successfull")
-        //     navigate('/products')
-        // }
-        // else{
-        //     alert("Wrong Credentials")
-        // }     
     }   
-
 
     return (
        
@@ -71,6 +69,12 @@ export const Login = () => {
               to enjoy all of our cool <Link color={'blue.400'}>features</Link> ✌️
             </Text>
           </Stack>
+          {error && <div style={{textAlign : "center" , color : "white" , fontSize : '20px' , 
+          borderRadius : '10px' ,
+          background : 'red'}}>Wrong Credentials</div>}
+          {load && <div style={{textAlign : "center" , color : "white" , fontSize : '20px' , 
+          borderRadius : '10px' ,
+          background : 'blue'}}>Loading</div>}
           <Box
             rounded={'lg'}
             bg={useColorModeValue('white', 'gray.700')}

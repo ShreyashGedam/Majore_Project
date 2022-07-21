@@ -81,7 +81,7 @@ const Twoboxes = () => {
     // console.log(data)
 
     useEffect( () => {
-        
+         
         dispatch(fetchData())
 
     },[])

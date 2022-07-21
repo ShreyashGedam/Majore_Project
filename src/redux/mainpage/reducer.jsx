@@ -27,7 +27,7 @@ export const reducer = (state = initState , action) => {
             return {
                 ...state,
                 error : true,
-                loading : fasle                    
+                loading : false                  
             }
          
         default :

@@ -34,7 +34,7 @@ export const fetchDataMain2 = () => (dispatch,getState) => {
     dispatch(dataRequest)
 
     axios( {
-        url : "http://localhost:8000/main_page_two",
+        url : "http://localhost:8080/main-page-two",
         method : "GET"
     })
     .then ( (res) => {

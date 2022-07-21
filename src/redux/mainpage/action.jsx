@@ -34,10 +34,11 @@ export const fetchData = () => (dispatch,getState) => {
     dispatch(dataRequest)
 
     axios( {
-        url : "http://localhost:8000/main_page_one",
+        url : "http://localhost:8080/main-page-one",
         method : "GET"
     })
     .then ( (res) => {
+        // console.log(res)
         const dataSuccess = fetchDataSucess(res.data)
         dispatch(dataSuccess)
     })

@@ -2,10 +2,9 @@ import { authActions } from "./action"
 
 const initState = {
     loading : false,
-    token : '',
+    id : '',
     error : false,
     isAuth : false,
-    data : {}
 }
  
 export const authRuducer = (state = initState , action) => {
@@ -24,7 +23,7 @@ export const authRuducer = (state = initState , action) => {
             return {
                 ...state,
                 loading : false,
-                token : action.payload,
+                id : action.payload,
                 error : false,
                 isAuth : true
             }
@@ -39,6 +38,10 @@ export const authRuducer = (state = initState , action) => {
             }
         }
 
+
+// ...........................................................................................................
+
+
         case authActions.REGISTER_REQUEST : {
             return {
                 ...state,
@@ -52,7 +55,7 @@ export const authRuducer = (state = initState , action) => {
                 ...state,
                 loading : false,
                 error : false,
-                data : action.payload
+                id : action.payload
             }
         }
 

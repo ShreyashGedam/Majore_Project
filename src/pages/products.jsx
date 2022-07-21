@@ -18,7 +18,7 @@ export const Products = () => {
         </div>
     )
 } 
-
+ 
 const Products__ = () => { 
 
     const data = useSelector( store => store.productData.data)
@@ -55,7 +55,7 @@ const Products__ = () => {
     return(
         <div className='main'>
             {data.map( (item) => (
-                 <div key={item.id_} style={{ cursor : 'pointer' }}>
+                 <div key={item._id} style={{ cursor : 'pointer' }}>
                  <img src={item.image} onClick={() => handleNavigate(item.id)}></img>
                  <div style={{ textAlign:'center'}}>
                      <p style={{ color: 'red' , fontSize :'14px' , fontWeight : 'bold'}}>OFFER</p>
