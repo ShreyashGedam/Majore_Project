@@ -1,39 +1,39 @@
 import { actionTypesMain2 } from "./action"
 
 const initState = {
-    loading : false,
-    data : [],
-    error : false
+    loading: false,
+    data: [],
+    error: false
 }
 
-export const reducerMain2 = (state = initState , action) => {
+export const reducerMain2 = (state = initState, action) => {
 
-    switch(action.type){
-        case actionTypesMain2.FETCH_DATA_REQUEST_MAIN2 :
+    switch (action.type) {
+        case actionTypesMain2.FETCH_DATA_REQUEST_MAIN2:
             return {
                 ...state,
-                error : false,
-                loading : true
+                error: false,
+                loading: true
             }
-         
-        case actionTypesMain2.FETCH_DATA_SUCCESS_MAIN2  :
+
+        case actionTypesMain2.FETCH_DATA_SUCCESS_MAIN2:
             return {
                 ...state,
-                data : action.payload,
-                error : false
-            }  
-         
-        case actionTypesMain2.FETCH_DATA_FAILURE_MAIN2 :
-            return {
-                ...state,
-                error : true,
-                loading : false                    
+                data: action.payload,
+                error: false
             }
-         
-        default :
+
+        case actionTypesMain2.FETCH_DATA_FAILURE_MAIN2:
+            return {
+                ...state,
+                error: true,
+                loading: false
+            }
+
+        default:
             return state
-            
-        }
 
-        
+    }
+
+
 }

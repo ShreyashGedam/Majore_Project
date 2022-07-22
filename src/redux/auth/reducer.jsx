@@ -1,73 +1,73 @@
 import { authActions } from "./action"
 
 const initState = {
-    loading : false,
-    id : '',
-    error : false,
-    isAuth : false,
+    loading: false,
+    id: '',
+    error: false,
+    isAuth: false,
 }
- 
-export const authRuducer = (state = initState , action) => {
 
-    switch(action.type) {
-        case authActions.GET_AUTH_REQUEST : {
+export const authRuducer = (state = initState, action) => {
+
+    switch (action.type) {
+        case authActions.GET_AUTH_REQUEST: {
             return {
                 ...state,
-                loading : true,
-                error : false,
-                isAuth : false,
-            }
-        } 
-
-        case authActions.GET_AUTH_SUCCESS : {   
-            return {
-                ...state,
-                loading : false,
-                id : action.payload,
-                error : false,
-                isAuth : true
+                loading: true,
+                error: false,
+                isAuth: false,
             }
         }
 
-        case authActions.GET_AUTH_FAILURE : {
+        case authActions.GET_AUTH_SUCCESS: {
             return {
                 ...state,
-                loading : false,
-                error : true,
-                isAuth : false,
+                loading: false,
+                id: action.payload,
+                error: false,
+                isAuth: true
             }
         }
 
-
-// ...........................................................................................................
-
-
-        case authActions.REGISTER_REQUEST : {
+        case authActions.GET_AUTH_FAILURE: {
             return {
                 ...state,
-                loading : true,
-                error : false
+                loading: false,
+                error: true,
+                isAuth: false,
             }
         }
 
-        case authActions.REGISTER_SUCCESS : {
+
+        // ...........................................................................................................
+
+
+        case authActions.REGISTER_REQUEST: {
             return {
                 ...state,
-                loading : false,
-                error : false,
-                id : action.payload
+                loading: true,
+                error: false
             }
         }
 
-        case authActions.REGISTER_FAILURE : {
+        case authActions.REGISTER_SUCCESS: {
             return {
-                ...state , 
-                loading : false,
-                error : true
+                ...state,
+                loading: false,
+                error: false,
+                id: action.payload
             }
         }
 
-        default : return state
+        case authActions.REGISTER_FAILURE: {
+            return {
+                ...state,
+                loading: false,
+                error: true
+            }
+        }
+
+        default: return state
     }
 
 }
