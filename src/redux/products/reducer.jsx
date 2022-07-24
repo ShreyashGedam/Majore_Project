@@ -7,7 +7,7 @@ const initStateProducts = {
     product: {},
     error: false,
     cart: []
-}
+} 
 
 export const productsReducer = (state = initStateProducts, action) => {
 
@@ -103,6 +103,8 @@ export const productsReducer = (state = initStateProducts, action) => {
                 error: true,
                 loading: false
             }
+
+// ..................................................................................................
 
         case actionTypesProduct.REMOVE_PRODUCT_REQUEST:
             return {

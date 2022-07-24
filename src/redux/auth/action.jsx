@@ -60,7 +60,7 @@ export const register = (payload) => (dispatch) => {
     dispatch(getAuthRequest())
 
     // console.log(payload)
-    axios({
+    axios({ 
         url: " http://localhost:8080/auth/signup",
         method: "POST",
         data: payload

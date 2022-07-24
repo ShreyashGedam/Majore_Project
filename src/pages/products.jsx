@@ -1,6 +1,6 @@
 import './products.css'
 import { useSelector, useDispatch } from 'react-redux'
-import { useEffect } from 'react'
+import { useEffect, useId } from 'react'
 import { addSingleProduct, productData } from '../redux/products/action'
 import { FilterComponent } from '../components/filter'
 import { useSearchParams, useNavigate } from 'react-router-dom'
@@ -22,6 +22,9 @@ export const Products = () => {
 const Products__ = () => {
 
     const data = useSelector(store => store.productData.data)
+    const auth = useSelector(store => store.authData.isAuth)
+    const userId = useSelector(store => store.authData.id)
+    // console.log(userId)
 
     const dispatch = useDispatch()
 
@@ -41,22 +44,34 @@ const Products__ = () => {
     }, [dispatch, data?.length, searchParams])
 
     const addCartHandler = (item) => {
-        // console.log(item)
-        alert("Item Added to Cart")
-        dispatch(addSingleProduct(item))
+        // console.log(item,userId)
+        if (!auth) {
+            alert("You need to login First")
+            navigate("/login")
+        }
+        else {
+            alert("Item Added to Cart")
+            dispatch(addSingleProduct(item,userId))
+        }
     }
 
     // console.log(data)
 
     const handleNavigate = (id) => {
-        navigate(`/products/${id}`)
+
+        if (!auth) {
+            navigate("/login")
+        }
+        else {
+            navigate(`/products/${userId}/${id}`)
+        }
     }
 
     return (
         <div className='main'>
             {data.map((item) => (
                 <div key={item._id} style={{ cursor: 'pointer' }}>
-                    <img src={item.image} onClick={() => handleNavigate(item.id)}></img>
+                    <img src={item.image} onClick={() => handleNavigate(item._id)}></img>
                     <div style={{ textAlign: 'center' }}>
                         <p style={{ color: 'red', fontSize: '14px', fontWeight: 'bold' }}>OFFER</p>
                         <p style={{ fontSize: '14px', fontWeight: 'bold' }}>{item.name}</p>

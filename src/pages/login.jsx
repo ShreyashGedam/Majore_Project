@@ -20,7 +20,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
-export const Login = () => {
+export const Login = () => { 
 
   const dispatch = useDispatch()
   const navigate = useNavigate()

@@ -48,7 +48,7 @@ export const productData = (payload) => (dispatch) => {
         url: "http://localhost:8080/products",
         method: "GET",
         params: {
-            ...payload
+            ...payload 
         }
     })
         .then((res) => {
@@ -85,11 +85,11 @@ export const getSingleProductFailure = (payload) => {
     }
 }
 
-export const getSIngleProduct = (id) => (dispatch) => {
+export const getSIngleProduct = (userId,id) => (dispatch) => {
     dispatch(getSingleProductRequest())
 
     axios({
-        url: `http://localhost:8000/products/${id}`,
+        url: `http://localhost:8080/products/${userId}/${id}`,
         method: "GET"
     })
         .then(r => dispatch(getSingleProductSuccess(r.data)))
@@ -117,13 +117,13 @@ export const addSingleProductFailure = (payload) => {
         type: actionTypesProduct.ADD_SINGLE_PRODUCT_FAILURE,
         payload
     }
-}
+} 
 
-export const addSingleProduct = (product) => dispatch => {
+export const addSingleProduct = (product,userId) => dispatch => {
     dispatch(addSingleProductRequest())
 
     axios({
-        url: 'http://localhost:8000/cart',
+        url: `http://localhost:8080/cartAdd/${userId}`,
         method: 'POST',
         data: product
     })
@@ -158,13 +158,13 @@ export const cartDataFailure = (payload) => {
     }
 }
 
-export const cartData = () => (dispatch) => {
+export const cartData = (userId) => (dispatch) => {
 
     const dataRequest = cartDataRequest()
     dispatch(dataRequest)
 
     axios({
-        url: "http://localhost:8000/cart",
+        url: `http://localhost:8080/cartAdd/${userId}`,
         method: "GET",
 
     })

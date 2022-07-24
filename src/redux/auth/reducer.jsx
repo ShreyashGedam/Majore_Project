@@ -5,7 +5,7 @@ const initState = {
     id: '',
     error: false,
     isAuth: false,
-}
+} 
 
 export const authRuducer = (state = initState, action) => {
 

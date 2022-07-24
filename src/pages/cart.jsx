@@ -22,25 +22,21 @@ import {
 export const Cart = () => {
 
   const data = useSelector(store => store.productData.cart)
+  const userId = useSelector(store => store.authData.id)
 
   // console.log(data)
 
   const dispatch = useDispatch()
-
-
 
   var sum = 0
   for (var i = 0; i < data.length; i++) {
     sum = sum + data[i].cost
   }
 
-  // console.log(sum)
-
-
-
+  // console.log(sum) 
 
   useEffect(() => {
-    dispatch(cartData())
+    dispatch(cartData(userId))
   }, [])
 
   const deletehandle = (id) => {
