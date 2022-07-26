@@ -28,7 +28,8 @@ export const getAuth = (payload) => (dispatch) => {
 
     // console.log(payload)
     axios({
-        url: " http://localhost:8080/auth/login",
+        // url: " http://localhost:8080/auth/login",
+        url: " https://majoreproject.herokuapp.com/auth/login",
         method: "POST",
         data: payload
     })
@@ -61,7 +62,8 @@ export const register = (payload) => (dispatch) => {
 
     // console.log(payload)
     axios({ 
-        url: " http://localhost:8080/auth/signup",
+        // url: " http://localhost:8080/auth/signup",
+        url: " https://majoreproject.herokuapp.com/auth/signup",
         method: "POST",
         data: payload
     })

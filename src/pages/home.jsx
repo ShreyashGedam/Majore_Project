@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import { fetchData } from '../redux/mainpage/action'
 import { fetchDataMain2 } from '../redux/mainpage2/action'
 import { addSingleProduct } from '../redux/products/action'
+import { useNavigate } from 'react-router-dom'
 
 
 export const Home = () => {
@@ -76,6 +77,9 @@ const SlideImage = () => {
 const Twoboxes = () => {
 
     const data = useSelector(store => store.mainPageData.data)
+    const auth = useSelector(store => store.authData.isAuth)
+    const userId = useSelector(store => store.authData.id)
+    const navigate = useNavigate()
 
     const dispatch = useDispatch()
     // console.log(data)
@@ -88,15 +92,21 @@ const Twoboxes = () => {
 
     const addCartHandler = (item) => {
         // console.log(item)
-        alert("Item Added to Cart")
-        dispatch(addSingleProduct(item))
+        if (!auth) {
+            alert("You need to login First")
+            navigate("/login")
+        }
+        else {
+            alert("Item Added to Cart")
+            dispatch(addSingleProduct(item, userId))
+        }
     }
 
     return (
         <div className='twoboxes'>
             <div className='twoboxes_imagediv'>
                 {data.map((item) => (
-                    <div key={item.id_}>
+                    <div key={item._id}>
                         {/* <div className='oneslider'></div> */}
                         <img src={item.image}></img>
                         <div className='imagediv_text'>
@@ -137,8 +147,11 @@ const Getting_Hot = () => {
 const Everything_Sale = () => {
 
     const data = useSelector(store => store.mainPageData2.data)
+    const auth = useSelector(store => store.authData.isAuth)
+    const userId = useSelector(store => store.authData.id)
     // console.log(data)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     useEffect(() => {
 
@@ -148,14 +161,20 @@ const Everything_Sale = () => {
 
     const addCartHandler = (item) => {
         // console.log(item)
-        alert("Item Added to Cart")
-        dispatch(addSingleProduct(item))
+        if (!auth) {
+            alert("You need to login First") 
+            navigate("/login")
+        }
+        else {
+            alert("Item Added to Cart")
+            dispatch(addSingleProduct(item,userId))
+        }
     }
 
     return (
         <div className='six_boxes'>
             {data.map((item) => (
-                <div key={item.id_} style={{ cursor: 'pointer' }}>
+                <div key={item._id} style={{ cursor: 'pointer' }}>
                     <img src={item.image}></img>
                     <div style={{ textAlign: 'center' }}>
                         <p style={{ color: 'red', fontSize: '14px', fontWeight: 'bold' }}>OFFER</p>

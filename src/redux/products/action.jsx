@@ -31,7 +31,7 @@ export const productDataSucess = (payload) => {
         payload
     }
 }
-
+ 
 export const productDataFailure = (payload) => {
     return {
         type: actionTypesProduct.FETCH_PRODUCT_DATA_FAILURE,
@@ -45,7 +45,8 @@ export const productData = (payload) => (dispatch) => {
     dispatch(dataRequest)
 
     axios({
-        url: "http://localhost:8080/products",
+        // url: "http://localhost:8080/products",
+        url: "https://majoreproject.herokuapp.com/products",
         method: "GET",
         params: {
             ...payload 
@@ -89,7 +90,8 @@ export const getSIngleProduct = (userId,id) => (dispatch) => {
     dispatch(getSingleProductRequest())
 
     axios({
-        url: `http://localhost:8080/products/${userId}/${id}`,
+        // url: `http://localhost:8080/products/${userId}/${id}`,
+        url: `https://majoreproject.herokuapp.com/products/${userId}/${id}`,
         method: "GET"
     })
         .then(r => dispatch(getSingleProductSuccess(r.data)))
@@ -123,7 +125,8 @@ export const addSingleProduct = (product,userId) => dispatch => {
     dispatch(addSingleProductRequest())
 
     axios({
-        url: `http://localhost:8080/cartAdd/${userId}`,
+        // url: `http://localhost:8080/cartAdd/${userId}`,
+        url: `https://majoreproject.herokuapp.com/cartAdd/${userId}`,
         method: 'POST',
         data: product
     })
@@ -164,7 +167,8 @@ export const cartData = (userId) => (dispatch) => {
     dispatch(dataRequest)
 
     axios({
-        url: `http://localhost:8080/cartAdd/${userId}`,
+        // url: `http://localhost:8080/cartAdd/${userId}`,
+        url: `https://majoreproject.herokuapp.com/cartAdd/${userId}`,
         method: "GET",
 
     })
@@ -202,18 +206,19 @@ const deleteProductCartFailure = (payload) => {
     }
 }
 
-export const deleteProductCart = (id) => (dispatch) => {
+export const deleteProductCart = (id,userId) => (dispatch) => {
 
     const dataRequest = deleteProductCartRequest()
     dispatch(dataRequest)
 
     axios({
-        url: `http://localhost:8000/cart/${id}`,
+        // url: `http://localhost:8080/cartAdd/${id}`,
+        url: `https://majoreproject.herokuapp.com/cartAdd/${id}`,
         method: "DELETE"
 
     })
         .then(() => {
-            dispatch(cartData())
+            dispatch(cartData(userId))
         })
         .then((res) => {
             const dataSuccess = deleteProductCartSuccess(res.data)

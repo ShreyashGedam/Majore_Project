@@ -1,7 +1,7 @@
 
 .container
 {
-    display: flex;
+    display: flex; 
     width: 80%;
     margin: auto;
     margin-top : -40px
@@ -81,7 +81,7 @@
 
 .cart_left > div{
     border-bottom: 1px solid grey;
-    height: 170px;
+    height: 200px;
     display: flex;
     margin-bottom: 10px
 }

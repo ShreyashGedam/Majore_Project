@@ -40,9 +40,9 @@ export const Cart = () => {
   }, [])
 
   const deletehandle = (id) => {
-    dispatch(deleteProductCart(id))
+    dispatch(deleteProductCart(id,userId))
+    // console.log(id)
   }
-
 
 
 
@@ -54,14 +54,14 @@ export const Cart = () => {
       <div className='cart_data' style={{ marginBottom: '200px' }}>
         <div className='cart_left'>
           {data.map((item) => (
-            <div key={item.id}>
+            <div key={item._id}>
               <img src={item.image}></img>
               <div style={{ width: '300px', marginLeft: '20px' }}>
                 <p style={{ marginBottom: '3px' }}>{item.name}</p>
                 <p style={{ fontWeight: 'bold' }}>{item.description}</p>
                 <p>Color : {item.color}</p>
                 <p style={{ marginBottom: '10px' }}>Sixe : {item.size}</p>
-                <p onClick={() => deletehandle(item.id)} className='cart_remove'>Remove</p>
+                <p onClick={() => deletehandle(item._id)} className='cart_remove'>Remove</p>
               </div>
               <p style={{ fontWeight: 'bold', marginLeft: '50px' }}>Rs. {item.cost}</p>
             </div>
@@ -91,7 +91,6 @@ export const Cart = () => {
             {/* <button style={{ padding : '10px' , fontWeight : 'bold'}}>CHECKOUT</button>  */}
             <ReturnFocus ></ReturnFocus>
           </div>
-
         </div>
 
       </div>
