@@ -19,7 +19,7 @@ export const FilterComponent = () => {
 
     const dispatch = useDispatch()
 
-    useEffect(() => {
+    useEffect(() => { 
 
         if (name) {
             setSearchParams({ name: name }, { replace: true })
