@@ -72,7 +72,7 @@ const SlideImage = () => {
             <img src='https://logan.nnnow.com/content/dam/nnnow-project/16-may-2022/1125x500-D.jpg'></img>
         </div>
     )
-}
+} 
 
 const Twoboxes = () => {
 
@@ -149,7 +149,8 @@ const Everything_Sale = () => {
     const data = useSelector(store => store.mainPageData2.data)
     const auth = useSelector(store => store.authData.isAuth)
     const userId = useSelector(store => store.authData.id)
-    // console.log(data)
+    console.log(data)
+    
     const dispatch = useDispatch()
     const navigate = useNavigate()
 

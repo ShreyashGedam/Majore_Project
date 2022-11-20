@@ -7,7 +7,7 @@ const initStateProducts = {
     product: {},
     error: false,
     cart: []
-} 
+}  
 
 export const productsReducer = (state = initStateProducts, action) => {
 

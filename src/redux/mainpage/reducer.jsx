@@ -3,7 +3,7 @@ import { actionTypes } from "./action"
 const initState = {
     loading: false,
     data: [],
-    error: false
+    error: false 
 }
 
 export const reducer = (state = initState, action) => {
