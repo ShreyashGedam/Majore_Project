@@ -49,7 +49,7 @@ export const productData = (payload) => (dispatch) => {
         url: "https://majoreproject.herokuapp.com/products",
         method: "GET",
         params: {
-            ...payload 
+            ...payload  
         }
     })
         .then((res) => {

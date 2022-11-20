@@ -13,7 +13,7 @@ export const Navbar2 = () => {
                     <div>HAIRCARE</div>
                     <div>TOOLS & BRUSHES</div>
                     <div>BRANDS</div>
-                </div>
+                </div> 
             </div>
             <div className="lables">
                 <div>Shreyash</div>
