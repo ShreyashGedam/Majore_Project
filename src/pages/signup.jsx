@@ -33,6 +33,12 @@ export const Signup = () => {
   const navigate = useNavigate()
 
   const handleChange = () => {
+
+    if (firstname.length === 0 || lastname.length === 0 || email.length === 0 || password.length === 0) {
+      alert("Enter all credentials")
+      return
+    }
+
     const data = {
       firstname: firstname,
       lastname: lastname,
