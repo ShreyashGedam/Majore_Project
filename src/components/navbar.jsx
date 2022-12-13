@@ -26,11 +26,11 @@ export const Navbar = () => {
                 color: "#D53F8C", border: '1px solid white', width: '150px', marginTop: '10px', marginBottom: '0'
             }}>
                 {/* <div style={{ cursor : 'pointer'}}><BiHeart spacing={6}></BiHeart></div> */}
-                <Link to={'/cart'}><RiShoppingBagLine style={{ cursor: 'pointer' }}></RiShoppingBagLine></Link>
-                {/* <Link to={'/cart'}>Cart</Link> */}
+                {/* <Link to={'/cart'}><RiShoppingBagLine style={{ cursor: 'pointer' }}></RiShoppingBagLine></Link> */}
+                <Link to={'/cart'}>Cart</Link>
                 <Link to={'/signup'}>
-                    <HiOutlineUser style={{ cursor: 'pointer' }}></HiOutlineUser>
-                    {/* Login */}
+                    {/* <HiOutlineUser style={{ cursor: 'pointer' }}></HiOutlineUser> */}
+                    Sign Up
                 </Link>
 
             </div>
