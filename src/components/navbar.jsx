@@ -1,9 +1,9 @@
 import "./stylecomp.css"
-import { Search2Icon } from '@chakra-ui/icons'
+// import { Search2Icon } from '@chakra-ui/icons'
 import { HStack, Input, Text, Flex, Center } from "@chakra-ui/react"
 // import { BiHeart} from "react-icons/bi";
-import { RiShoppingBagLine } from "react-icons/Ri";
-import { HiOutlineUser } from "react-icons/Hi";
+// import { RiShoppingBagLine } from "react-icons/Ri";
+// import { HiOutlineUser } from "react-icons/Hi";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
