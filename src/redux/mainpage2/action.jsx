@@ -35,7 +35,7 @@ export const fetchDataMain2 = () => (dispatch, getState) => {
 
     axios({
         // url: "http://localhost:8080/main-page-two",
-        url: "https://majoreproject.herokuapp.com/main-page-two",
+        url: "https://backend-production-1c28.up.railway.app/main-page-two",
         method: "GET"
     })
         .then((res) => {

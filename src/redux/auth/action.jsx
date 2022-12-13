@@ -29,7 +29,7 @@ export const getAuth = (payload) => (dispatch) => {
     // console.log(payload)
     axios({
         // url: " http://localhost:8080/auth/login",
-        url: " https://majoreproject.herokuapp.com/auth/login",
+        url: "https://backend-production-1c28.up.railway.app/auth/login",
         method: "POST",
         data: payload
     })
@@ -63,7 +63,7 @@ export const register = (payload) => (dispatch) => {
     // console.log(payload)
     axios({ 
         // url: " http://localhost:8080/auth/signup",
-        url: " https://majoreproject.herokuapp.com/auth/signup",
+        url: "https://backend-production-1c28.up.railway.app/auth/signup",
         method: "POST",
         data: payload
     })

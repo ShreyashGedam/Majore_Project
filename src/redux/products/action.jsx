@@ -46,7 +46,7 @@ export const productData = (payload) => (dispatch) => {
 
     axios({
         // url: "http://localhost:8080/products",
-        url: "https://majoreproject.herokuapp.com/products",
+        url: "https://backend-production-1c28.up.railway.app/products",
         method: "GET",
         params: {
             ...payload  
@@ -91,7 +91,7 @@ export const getSIngleProduct = (userId,id) => (dispatch) => {
 
     axios({
         // url: `http://localhost:8080/products/${userId}/${id}`,
-        url: `https://majoreproject.herokuapp.com/products/${userId}/${id}`,
+        url: `https://backend-production-1c28.up.railway.app/${userId}/${id}`,
         method: "GET"
     })
         .then(r => dispatch(getSingleProductSuccess(r.data)))
@@ -126,7 +126,7 @@ export const addSingleProduct = (product,userId) => dispatch => {
 
     axios({
         // url: `http://localhost:8080/cartAdd/${userId}`,
-        url: `https://majoreproject.herokuapp.com/cartAdd/${userId}`,
+        url: `https://backend-production-1c28.up.railway.app/${userId}`,
         method: 'POST',
         data: product
     })
@@ -168,7 +168,7 @@ export const cartData = (userId) => (dispatch) => {
 
     axios({
         // url: `http://localhost:8080/cartAdd/${userId}`,
-        url: `https://majoreproject.herokuapp.com/cartAdd/${userId}`,
+        url: `https://backend-production-1c28.up.railway.app/${userId}`,
         method: "GET",
 
     })
@@ -213,7 +213,7 @@ export const deleteProductCart = (id,userId) => (dispatch) => {
 
     axios({
         // url: `http://localhost:8080/cartAdd/${id}`,
-        url: `https://majoreproject.herokuapp.com/cartAdd/${id}`,
+        url: `https://backend-production-1c28.up.railway.app/${id}`,
         method: "DELETE"
 
     })
