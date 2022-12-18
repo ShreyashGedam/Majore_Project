@@ -10,12 +10,10 @@ export const FilterComponent = () => {
 
     const [name, setName] = useState(searchParams.getAll("name") || [])
 
-
     const categoryHandler = (value) => {
         // console.log(value)
         setName(value)
     }
-
 
     const dispatch = useDispatch()
 
@@ -45,5 +43,4 @@ export const FilterComponent = () => {
             </Box>
         </Box>
     )
-
 }

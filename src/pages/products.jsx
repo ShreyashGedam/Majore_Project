@@ -40,6 +40,7 @@ const Products__ = () => {
             dispatch(productData())
             // console.log(params)
         }
+        console.log(data)
 
     }, [dispatch, data?.length, searchParams])
 
@@ -82,7 +83,6 @@ const Products__ = () => {
                     </div>
                 </div>
             ))}
-
         </div>
     )
 }
