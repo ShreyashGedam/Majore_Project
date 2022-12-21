@@ -21,7 +21,6 @@ export const actionTypesProduct = {
 export const productDataRequest = () => {
     return {
         type: actionTypesProduct.FETCH_PRODUCT_DATA_REQUEST,
-
     }
 }
 
@@ -43,18 +42,17 @@ export const productData = (payload) => (dispatch) => {
 
     const dataRequest = productDataRequest()
     dispatch(dataRequest)
-
+    console.log(payload)
     axios({
         // url: "http://localhost:8080/products",
         url: "https://backend-production-1c28.up.railway.app/products",
         method: "GET",
         params: {
-            ...payload  
+            name:payload
         }
     })
         .then((res) => {
             const dataSuccess = productDataSucess(res.data)
-            // console.log(res.data)
             dispatch(dataSuccess)
         })
         .catch((err) => {

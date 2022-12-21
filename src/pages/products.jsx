@@ -1,9 +1,8 @@
 import './products.css'
 import { useSelector, useDispatch } from 'react-redux'
-import { useEffect, useId } from 'react'
-import { addSingleProduct, productData } from '../redux/products/action'
+import { addSingleProduct } from '../redux/products/action'
 import { FilterComponent } from '../components/filter'
-import { useSearchParams, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 export const Products = () => {
@@ -24,42 +23,21 @@ const Products__ = () => {
     const data = useSelector(store => store.productData.data)
     const auth = useSelector(store => store.authData.isAuth)
     const userId = useSelector(store => store.authData.id)
-    // console.log(userId)
-
     const dispatch = useDispatch()
-
-    const [searchParams] = useSearchParams()
-
     const navigate = useNavigate()
 
-    useEffect(() => {
-        if (data?.length === 0) {
-            let params = {
-                name: searchParams.getAll("name")
-            }
-            dispatch(productData())
-            // console.log(params)
-        }
-        console.log(data)
-
-    }, [dispatch, data?.length, searchParams])
-
     const addCartHandler = (item) => {
-        // console.log(item,userId)
         if (!auth) {
-            alert("You need to login First") 
+            alert("You need to login First")
             navigate("/login")
         }
         else {
             alert("Item Added to Cart")
-            dispatch(addSingleProduct(item,userId))
+            dispatch(addSingleProduct(item, userId))
         }
     }
 
-    // console.log(data)
-
     const handleNavigate = (id) => {
-
         if (!auth) {
             navigate("/login")
         }
