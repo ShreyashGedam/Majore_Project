@@ -42,10 +42,10 @@ export const productData = (payload) => (dispatch) => {
 
     const dataRequest = productDataRequest()
     dispatch(dataRequest)
-    console.log(payload)
+    // console.log(payload)
     axios({
-        // url: "http://localhost:8080/products",
-        url: "https://backend-production-1c28.up.railway.app/products",
+        url: "http://localhost:8080/products",
+        // url: "https://backend-production-1c28.up.railway.app/products",
         method: "GET",
         params: {
             name:payload
